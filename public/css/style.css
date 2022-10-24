@@ -1,0 +1,60 @@
+.nav-container{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-container ul{
+    display: flex;
+    list-style: none;    
+}
+
+.nav-container ul li{
+    margin-right: 15px;
+    font-size: 16pt;
+}
+
+.nav-container h1{
+    margin-left: 20px;
+    background-color: #e0e0e0;
+    color: black;
+    width: fit-content;
+    padding: 0 5px;
+    border: 7px outset;
+    border-radius: 10%;
+}
+
+body{
+    background: #e0e0e0;
+    margin: 0;
+}
+
+.post-container{
+    margin: 20px;
+    border: 5px solid black;
+    font-size: 16pt;
+}
+
+.post-head{
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    height: auto;
+}
+
+.post-title{
+    width: fit-content;
+    margin: 2px 0;
+}
+
+.username{
+    width: fit-content;
+    margin: 2px 0;
+}
+
+.post-content{
+    margin: 5px;
+}
