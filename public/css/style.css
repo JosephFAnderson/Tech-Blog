@@ -14,7 +14,6 @@ main{
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 2% 0;
 }
 
@@ -110,7 +109,7 @@ main{
     margin: 5px;
 }
 
-#ls-btn{
+.form-btn{
     background: #aaaaaa;
     margin-top: 10px;
 }
@@ -118,11 +117,6 @@ main{
 .ls-link{
     font-size: .75em;
     margin-top: 5px;
-}
-.dashboardContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .userPostContainer{
@@ -132,7 +126,7 @@ main{
     color: white;
     border-radius: 15px;
     width: 85%;
-    margin: 0 auto;
+    margin: 10px auto;
     font-size: 1.25em;
 }
 
@@ -151,4 +145,53 @@ main{
     background: black;
     color: white;
     font-size: 1.25em;
+    margin-top: auto;
+}
+
+#newPostContainer{
+    display: flex;
+    flex-direction: column;
+    border: 3px black solid;
+    width: 80%;
+    flex: 1 1 auto;
+    margin: auto;
+    margin-bottom: 10px;    
+}
+
+#newPostHeader{
+    background: black;
+    color: white;
+    font-size: 1.25em;
+}
+#newPostForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2%;
+    flex: 1 1 auto;
+    font-size: 1.25em;
+}
+
+#newPostTitle, #newPostContent{
+    border: 3px #499acf solid;
+}
+
+#newPostTitle{
+    height: 30px;
+    font-size: 1em;
+}
+
+#newPostContent{
+    font-size: 1em;
+}
+
+#newPostFormBtn{
+    height: 50px;
+    border-radius: 15px;
+    margin-top: 0px;
+}
+
+.npfDiv{
+    display: flex;
+    flex-direction: column;
 }

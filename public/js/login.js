@@ -13,6 +13,7 @@ const login = async (event) => {
             headers: { 'Content-Type': 'application/json' }
         })
 
+        console.log(res);
         if(res.ok){
             document.location.replace('/dashboard');
         }else {
