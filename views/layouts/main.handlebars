@@ -13,8 +13,12 @@
             <nav class="navbar">
                 <ul>
                     <li><a class="navLink" href="/">Home</a></li>
-                    <li><a class="navLink" href="/">Dashboard</a></li>
+                    <li><a class="navLink" href="/dashboard">Dashboard</a></li>
+                    {{#if logged_in}}
+                    <li><button id="logout">Log Out</button></li>
+                    {{else}}
                     <li><a class="navLink" href="/login">Log in</a></li>
+                    {{/if}}
                 </ul>
             </nav>
             <h1>Tech Blog</h1>            
