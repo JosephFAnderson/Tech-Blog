@@ -1,3 +1,12 @@
+body{
+    background: #e0e0e0;
+    margin: 0;
+}
+
+.navLink{
+    color: inherit;
+}
+
 .nav-container{
     background-color: black;
     color: white;
@@ -23,11 +32,6 @@
     padding: 0 5px;
     border: 7px outset;
     border-radius: 10%;
-}
-
-body{
-    background: #e0e0e0;
-    margin: 0;
 }
 
 .post-container{
@@ -57,4 +61,35 @@ body{
 
 .post-content{
     margin: 5px;
+}
+
+.ls-container{
+    font-size: 1.25em;
+    width: 80%;
+    max-width: 500px;
+    height: 200px;
+    border: 5px black solid;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.ls-header{
+    background: black;
+    color: white;
+}
+
+.ls-form{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#ls-btn{
+    background: #aaaaaa;
+    margin-top: 10px;
+}
+
+.ls-link{
+    font-size: .75em;
+    margin-top: 5px;
 }
