@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res, next) => {
-    req.session.user = null;
+    req.session.user_id = null;
     req.session.logged_in = false;
 
     req.session.save(err => {

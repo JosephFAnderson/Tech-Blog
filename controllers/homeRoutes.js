@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const {User, Post, Comment} = require('../models');
+const { findAll } = require('../models/User');
 const isAuth = require('../utils/auth');
-
-// Handle display of urls through res.render('handlebar', data)
 
 router.get('/', async (req, res) => {
     try{
@@ -40,7 +39,10 @@ router.get('/signup', async (req, res) => {
 
 router.get('/dashboard', isAuth, async (req, res) => {
     try{
-        res.render('dashboard', { logged_in: req.session.logged_in });
+        const postData = await Post.findAll({where: {user_id: req.session.user_id}})
+        const posts = postData.map(post => post.get({plain: true}));
+        console.log(posts)
+        res.render('dashboard', { posts });
     }catch (err) {
         res.status(500).json(err);
     }

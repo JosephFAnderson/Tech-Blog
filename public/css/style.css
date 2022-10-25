@@ -1,6 +1,21 @@
+html{
+    height: 100vh;
+}
+
 body{
+    display: flex;
+    flex-direction: column;
     background: #e0e0e0;
     margin: 0;
+    min-height: 100%;
+}
+
+main{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2% 0;
 }
 
 .navLink{
@@ -103,4 +118,37 @@ body{
 .ls-link{
     font-size: .75em;
     margin-top: 5px;
+}
+.dashboardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.userPostContainer{
+    display: flex;
+    justify-content: space-between;
+    background: #7c7979;
+    color: white;
+    border-radius: 15px;
+    width: 85%;
+    margin: 0 auto;
+    font-size: 1.25em;
+}
+
+.userPost{
+    margin-left: 10px;
+}
+
+.postCreatedAt{
+    margin-right: 10px;
+}
+
+.newPostBtn{
+    width: 10%;
+    border-radius: 15px;
+    align-self: center;
+    background: black;
+    color: white;
+    font-size: 1.25em;
 }
