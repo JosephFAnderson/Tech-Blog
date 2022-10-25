@@ -48,6 +48,25 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.post('/logout', async (req, res, next) => {
+    req.session.user = null;
+    req.session.logged_in = false;
+
+    req.session.save(err => {
+        if(err) {
+            next(err);
+        };
+    });
+
+    req.session.regenerate(err => {
+        if(err){
+            next(err);
+        }
+    })
+
+    res.status(200).json("You are logged out");
+});
+
 router.delete('/:id', async (req, res) => {
     try{
         const userData = await User.destroy({where: {id: req.params.id}});
