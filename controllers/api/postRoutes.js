@@ -11,6 +11,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+    try{
+        console.log(req.body.id);
+        const postData = await Post.update({
+            title: req.body.title, 
+            content: req.body.content
+        },{ where: {id: req.params.id} });
+        res.status(200).json(postData);
+    }catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Allow user to edit a post?
 
 router.delete('/:id', async (req, res) => {
@@ -20,6 +33,6 @@ router.delete('/:id', async (req, res) => {
     }catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 module.exports = router;

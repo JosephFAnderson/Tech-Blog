@@ -1,0 +1,19 @@
+<section id="newPostContainer">
+    <header id="newPostHeader">
+        <h3>Edit Post</h3>
+    </header>
+    <form id="newPostForm">
+        <div class="npfDiv">
+            <label>Title</label>
+            <textarea id="newPostTitle">{{post.title}}</textarea>
+        </div>
+        <div class="npfDiv">
+            <label>Content</label>
+            <textarea id="newPostContent">{{post.content}}</textarea>
+        </div>
+        <button data-id="{{post.id}}" id="updatePost" class="form-btn">Update Post</button>
+        <button data-id="{{post.id}}" id="deletePost" class="form-btn">Delete</button>
+    </form>
+</section>
+<button class="newPostBtn">+ New Post</button>
+<script src="/js/updatePost.js"></script>

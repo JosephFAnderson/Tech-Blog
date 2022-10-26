@@ -54,4 +54,16 @@ router.get('/newpost', isAuth, async (req, res) => {
     }
 })
 
+router.get('/editpost/:id', isAuth, async (req, res) => {
+    try{
+        const postData = await Post.findByPk(req.params.id);
+        const post = postData.get({plain: true});
+        console.log(post);
+        res.render('editPost', { post, logged_in: req.session.logged_in });
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

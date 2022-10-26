@@ -21,11 +21,23 @@ const createPost = async (event) => {
         }else {
             alert(res.statusText);
         }
-    };
-   
+    };   
+};
+
+const editPost = async (event) => {
+    if(event.target.dataset.id){
+        const id = event.target.dataset.id;
+        document.location.replace(`/editpost/${id}`)
+    }
 }
 
+// if the user is at the /newpost endpoint trigger this event listener
 if(document.location.pathname === "/newpost"){
     const createBtnEl = document.querySelector('#newPostFormBtn');
     createBtnEl.addEventListener('click', createPost);
+}
+
+if(document.location.pathname === "/dashboard"){
+    const mainEl = document.querySelector('main');
+    mainEl.addEventListener('click', editPost);
 }
