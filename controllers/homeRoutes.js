@@ -66,4 +66,15 @@ router.get('/editpost/:id', isAuth, async (req, res) => {
     }
 });
 
+router.get('/post/:id', isAuth, async (req, res) => {
+    try{
+        const postData = await Post.findByPk(req.params.id, {include: [{model: Comment, include: User}, User]});
+        const post = postData.get({plain: true});
+        res.render('post', {post});
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;

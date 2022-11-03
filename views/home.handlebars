@@ -2,10 +2,11 @@
     {{#each posts as |post|}}
     <div class="post-container">
         <header class="post-head">
-            <p class="post-title">{{post.title}}</p>
+            <p data-id="{{post.id}}" class="home-title post-title" onclick="toPost(event)">{{post.title}}</p>
             <p class ="username">Posted by {{post.user.username}} on {{post.created_at}}</p>
         </header>
         <article class="post-content">{{post.content}}</article>
     </div>
     {{/each}}
 </section>
+<script src="/js/home.js"></script>

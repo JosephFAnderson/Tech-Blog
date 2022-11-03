@@ -79,6 +79,10 @@ main{
     margin: 2px 0;
 }
 
+.home-title:hover{
+    cursor: pointer;
+}
+
 .username{
     width: fit-content;
     margin: 2px 0;

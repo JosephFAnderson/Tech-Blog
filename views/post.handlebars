@@ -1,0 +1,18 @@
+<section>
+    <div class="post-container">
+        <header class="post-head">
+             <p class="post-title">{{post.title}}</p>
+            <p class ="username">Posted by {{post.user.username}} on {{post.created_at}}</p>
+        </header>
+        <article class="post-content">{{post.content}}</article>
+    </div>
+    {{#each post.comments as |comment|}}
+    <div class="post-container">
+        <header class="post-head"></header>
+        <div class="post-content">
+            <p>{{comment.content}}</p>
+            <p>-{{comment.user.username}}, {{comment.created_at}}</p>
+        </div>
+    </div>
+    {{/each}} 
+</section>
