@@ -123,6 +123,38 @@ main{
     margin-top: 5px;
 }
 
+.comment-content{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-content p {
+    margin: 0;
+}
+
+.comment-head{
+    height: 30px;
+    background-color: black;
+}
+
+.commentText{
+    width: 95%;
+    height: 32px;
+    margin: 5px;
+    align-self: center;
+}
+
+.newComment{
+    width: 95%;
+    border-radius: 15px;
+    align-self: center;
+    background: black;
+    color: white;
+    font-size: 1.25em;
+    margin-bottom: 5px;
+}
+
 .userPostContainer{
     display: flex;
     justify-content: space-between;

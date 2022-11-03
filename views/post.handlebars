@@ -8,11 +8,20 @@
     </div>
     {{#each post.comments as |comment|}}
     <div class="post-container">
-        <header class="post-head"></header>
+        <header class="comment-head"></header>
         <div class="post-content">
             <p>{{comment.content}}</p>
             <p>-{{comment.user.username}}, {{comment.created_at}}</p>
         </div>
     </div>
-    {{/each}} 
+    {{/each}}
+    <div class="post-container">
+        <header class="comment-head"></header>
+        <div class="comment-content">
+            <p>Comment</p>
+            <textarea class="commentText"></textarea>
+           <button data-id="{{post.id}}" class="newComment">Submit</button>
+        </div>
+    </div>
 </section>
+<script src="/js/post.js"></script>

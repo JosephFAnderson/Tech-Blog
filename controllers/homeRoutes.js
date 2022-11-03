@@ -72,7 +72,6 @@ router.get('/post/:id', isAuth, async (req, res) => {
         const post = postData.get({plain: true});
         res.render('post', {post});
     }catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 })
