@@ -166,6 +166,10 @@ main{
     font-size: 1.25em;
 }
 
+.userPostContainer:hover{
+    cursor: pointer;
+}
+
 .userPost{
     margin-left: 10px;
 }

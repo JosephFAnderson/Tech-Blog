@@ -17,7 +17,13 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try{
         const userData = await User.create(req.body);
-        res.status(200).json("Created New User");
+        
+        req.session.save( () => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.status(200).json("Created New User");
+        });        
     }catch (err) {
         res.status(500).json(err);
     }
@@ -49,20 +55,11 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res, next) => {
-    req.session.user_id = null;
-    req.session.logged_in = false;
-
-    req.session.save(err => {
+    req.session.destroy(err => {
         if(err) {
             next(err);
         };
     });
-
-    req.session.regenerate(err => {
-        if(err){
-            next(err);
-        }
-    })
 
     res.status(200).json("You are logged out");
 });
